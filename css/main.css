@@ -11389,7 +11389,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 #knowledges > .container div.show > .item > .progress > .progress-level {
   height: 10px;
   background : linear-gradient(to left, #00c6fb 0%, #005bea 100%);
-  animation: 1s ease-in 1s both ani;
+  animation: 1s ease-in 0s both ani;
 }
 
 @keyframes ani {
@@ -11397,6 +11397,8 @@ section#contact form#contactForm :-ms-input-placeholder {
       width: 0; 
   }
 }
+
+
 
 /* ARCHIVE */
 @media (max-width: 992px) {
