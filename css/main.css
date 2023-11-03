@@ -11401,6 +11401,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 /* ARCHIVE */
+.card {
+  transition: all 0.3s;
+}
+.card:hover {
+  transform: scale(1.05) translateY(-5%);
+}
+
+
 @media (max-width: 992px) {
   #archive .col-xl-6 {
     width: 100%;
