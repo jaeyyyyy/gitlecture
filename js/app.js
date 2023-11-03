@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -108,3 +108,40 @@ $('form').on('submit', function (e){ // 이름, 이메일, 전화번호 유효�
     }
 }); 
 
+// 프로그레스 바를 보고 있을 때 애니메이션 실행하기
+var isVisible = false;
+
+$(window).on('scroll',function() {
+    if (checkVisible($('.skill-progress'))&&!isVisible) {
+        $('.skill-progress').addClass('show');
+        isVisible=true;
+    }
+});
+
+function checkVisible( elm, eval ) {
+    eval = eval || "object visible";
+    var viewportHeight = $(window).height(), // Viewport Height
+        scrolltop = $(window).scrollTop(), // Scroll Top
+        y = $(elm).offset().top,
+        elementHeight = $(elm).height();
+
+    if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+    if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+}
+
+
+// gotop
+// 스크롤 시 효과 설정
+    $(window).scroll(function() {  // 스크롤 시
+        if($(this).scrollTop() > 100) {  // 스크롤탑이 100보다 클 때
+            $('#gotop').css('opacity', 0.8);
+        }
+        else {  // 반대로 100 보다 작을 때
+            $('#gotop').css('opacity', 0);
+        }
+    });
+
+// 버튼 클릭 시 이동
+    $('#gotop').click(function() {
+        window.scrollTo({top : 0, behavior: 'smooth'});
+    });

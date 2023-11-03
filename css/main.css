@@ -661,13 +661,10 @@ progress {
   }
 }
 .row {
-  /* --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 1rem; */
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1rem;
   display: flex;
   flex-wrap: wrap;
-  /* margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x)); */
 }
 .row > * {
   flex-shrink: 0;
@@ -676,6 +673,7 @@ progress {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+  margin-bottom: var(--bs-gutter-y);
 }
 
 .col {
@@ -1107,8 +1105,7 @@ progress {
     flex: 0 0 auto;
     display: flex;
     max-width: calc((100% - 11rem) / 3);
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
     gap: 4rem;
   }
   .col-md-5 {
@@ -10993,6 +10990,9 @@ header.masthead .masthead-heading {
 .portfolio-modal .modal-content img {
   margin-bottom: 2rem;
 }
+.portfolio-modal .modal-content .modal-text ul {
+  text-align: left;
+}
 .portfolio-modal .close-modal {
   position: absolute;
   top: 1.5rem;
@@ -11270,10 +11270,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 /* about me 수정 */
-.fa_stack {
+#aboutme .col-md-4 {
   transition: all 0.5s;
 }
-.fa-stack:hover {
+#aboutme .col-md-4:hover {
   transform: scale(1.05);
 }
 .text-box {
@@ -11386,7 +11386,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   padding : 5px;
   border-radius: 3px;
 }
-.progress-level {
+#knowledges > .container div.show > .item > .progress > .progress-level {
   height: 10px;
   background : linear-gradient(to left, #00c6fb 0%, #005bea 100%);
   animation: 1s ease-in 1s both ani;
@@ -11398,30 +11398,17 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
-/* 순서대로 애니메이션 실행하기 */
-.skill-progress .item:nth-of-type(1) .progress-level{
-  animation-delay: 0s;
-}
-.skill-progress .item:nth-of-type(2) .progress-level{
-  animation-delay: 0.2s;
-}
-.skill-progress .item:nth-of-type(3) .progress-level{
-  animation-delay: 0.4s;
-}
-.skill-progress .item:nth-of-type(4) .progress-level{
-  animation-delay: 0.6s;
-}
-.skill-progress .item:nth-of-type(5) .progress-level{
-  animation-delay: 0.8s;
-}
-
 /* ARCHIVE */
 @media (max-width: 992px) {
   #archive .col-xl-6 {
     width: 100%;
   }
-
-
+}
+@media (max-width: 391px) {
+  .col-3 {
+    width: 50%;
+    transform: translateX(50%);
+  }
 }
 
 
@@ -11433,4 +11420,29 @@ section#contact form#contactForm :-ms-input-placeholder {
 #submitSuccessMessage {
   color: #fff;
   text-align: center;
+}
+
+/* gotop */
+#gotop {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  right: 10vh;
+  bottom: 5vh;
+  transition: all 0.3s;
+  opacity: 0;
+}
+#gotop:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 901px) {
+  #gotop {
+    right: 5vh;
+  }
+}
+@media (max-width: 601px) {
+  #gotop {
+    right: 2vh;
+  }
 }
